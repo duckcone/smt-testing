@@ -101,7 +101,7 @@ int main(int argc, char **argv) {
         iteration_count = 200000;
     }
 
-    printf("iteration times: %d\n", iteration_count);
+    printf("Iteration times: %d\n", iteration_count);
 
     pthread_t threads[NUM_THREADS];
     thread_arg_t thread_args[NUM_THREADS];
@@ -126,7 +126,7 @@ int main(int argc, char **argv) {
         pthread_join(threads[i], NULL);
     }
     clock_gettime(CLOCK_REALTIME, &ts2);
-    printf("%ld\n", (ts2.tv_sec - ts1.tv_sec)*1000000000 + (ts2.tv_nsec - ts1.tv_nsec));
+    printf("Total cost: %ld\n", (ts2.tv_sec - ts1.tv_sec)*1000000000 + (ts2.tv_nsec - ts1.tv_nsec));
 
     printf("All threads have completed their tasks.\n");
 
